@@ -3,9 +3,11 @@ import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
+  ssr: false,
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   app: {
+    baseURL: "/profile/",
     head: {
       title: "Alan Reibel Perez - Fullstack Web Developer",
       meta: [
