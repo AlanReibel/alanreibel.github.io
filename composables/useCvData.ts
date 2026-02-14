@@ -7,7 +7,7 @@ export const useCvData = () => {
         email: "reibeltel@gmail.com",
         github: "https://github.com/AlanReibel",
         linkedin: "https://linkedin.com/in/alan-reibel/",
-        summary: "Fullstack Web Developer with 11 years of experience, specialized in Vanilla JS & CSS, Vue3, Nuxt3, Pinia and Laravel. Creative and analytical, I focus my work on improving performance, usability and user experience."
+        summary: "Fullstack Developer specialized in Vue3, Nuxt3, and Laravel. 12 years building high-performance, user-centric web applications with measurable business impact."
     };
 
     const experience = [
@@ -17,8 +17,12 @@ export const useCvData = () => {
             techStack: ["Vue", "Nuxt", "Laravel"],
             period: "2021 - 2025",
             details: [
-                "Backend API with Laravel. Using Eloquent models, JWT Auth, Migrations, Seeders, Commands, X-Degug and PHPUnit.",
-                "Frontend with Vue 3 + Nuxt 3 and Pinia State management. Using TypeScript, Node, Vite and Vitest."
+                "Built educational management platform as Tech Lead, defining MVP architecture and technical strategy",
+                "Backend: Laravel REST APIs, Eloquent ORM, JWT auth, RBAC, real-time WebSockets notifications",
+                "Frontend: Nuxt 3 + Vue 3 + TypeScript with SSR, Pinia state management, localStorage persistence",
+                "Created management modules: student imports (XLS), staff, scheduling, course catalog, visual calendar",
+                "Led architecture decisions, code reviews, PR management, and clean code standards enforcement",
+                "Automated workflows with Artisan commands, migrations, seeders."
             ]
         },
         {
@@ -107,14 +111,14 @@ export const useCvData = () => {
     ];
 
     const technologies = {
-        AI_Development: ["Claude Code", "Windsurf", "Agents", "Skills", "Workflows", "MCP integrations"],
+        AI: ["Claude Code", "Windsurf", "Agents", "Skills", "Workflows", "MCP integrations"],
         Frontend: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "Vue.js", "Nuxt.js", "Astro", "React", "Next.js", "Three.js", "Web Components"],
         Backend: ["PHP", "Laravel", "SQL", "Node.js", "REST", "SOAP"],
-        Testing_Quality: ["Vitest", "PHPUnit", "Code Reviews", "Clean Architecture"],
-        DevOps_Tools: ["Docker", "Git (GitHub, GitLab)", "Linux Bash", "Apache", "nginx", "CI/CD"],
+        Quality: ["Vitest", "PHPUnit", "Code Reviews", "Clean Architecture"],
+        DevOps: ["Docker", "Git (GitHub, GitLab)", "Linux Bash", "Apache", "nginx", "CI/CD"],
         Performance: ["Web Performance Optimization", "Core Web Vitals", "SEO (Technical_On-Page)"],
         Design: ["Figma", "Photoshop", "Adobe XD", "Sketch"],
-        CMS_eCommerce: ["WordPress", "Prestashop"],
+        CMS: ["WordPress", "Prestashop"],
         Learning: ["PostgreSQL", "Kafka", "AWS S3", "TDD", "DDD", "FFB"]
 
     };
@@ -131,16 +135,17 @@ export const useCvData = () => {
     ];
 
     const softSkills = [
-        "Critical Thinking",
+        "Problem Solving",
+        "System Design Thinking",
         "Team Collaboration",
-        "Rapid Adaptation",
-        "High Focus",
-        "Data-Driven Decision Making",
-        "Strategic Planning",
-        "Innovation",
-        "Efficient Problem Resolution",
-        "Ethical Responsibility",
-        "Resilience"
+        "Continuous Learning",
+        "Attention to Detail",
+        "Self-Management",
+        "Adaptability",
+        "Ownership",
+        "Critical Thinking",
+        "Rapid Learning",
+        "Code Quality Advocacy"
     ];
 
     return {
