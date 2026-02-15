@@ -18,9 +18,7 @@ const year = new Date().getFullYear();
 
       <div class="social">
         <a :href="personalInfo.github" target="_blank" class="link">GitHub</a>
-        <a :href="personalInfo.linkedin" target="_blank" class="link"
-          >LinkedIn</a
-        >
+        <a :href="personalInfo.linkedin" target="_blank" class="link">LinkedIn</a>
       </div>
 
       <p class="copyright">
@@ -47,9 +45,10 @@ const year = new Date().getFullYear();
     text-align: center;
 
     .title {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 10vw, 2.5rem);
       margin-bottom: 1rem;
       background: var(--gradient-text);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }

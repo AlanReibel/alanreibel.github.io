@@ -101,7 +101,8 @@ const techs = [
 ];
 
 const N = techs.length;
-const RADIUS = 190;
+const isMobile = ref(false);
+const RADIUS = computed(() => (isMobile.value ? 140 : 190));
 
 const state = reactive({
   tiltX: 0,
@@ -155,7 +156,7 @@ function getItemStyle(i) {
   const dim = 0.3 + (zNorm + 1) * 0.35;
   const scale = 0.82 + (zNorm + 1) * 0.14;
   return {
-    transform: `rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) translateX(${RADIUS}px) rotateZ(${-rz}deg) rotateY(${-ry}deg) rotateX(${-rx}deg)`,
+    transform: `rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) translateX(${RADIUS.value}px) rotateZ(${-rz}deg) rotateY(${-ry}deg) rotateX(${-rx}deg)`,
     '--d-blur': `${blur.toFixed(1)}px`,
     '--d-dim': dim.toFixed(2),
     '--d-scale': scale.toFixed(2),
@@ -178,11 +179,18 @@ const particles = Array.from({ length: 25 }, (_, i) => ({
   opacity: 0.15 + Math.random() * 0.35,
 }));
 
+function handleResize() {
+  isMobile.value = window.innerWidth < 960;
+}
+
 onMounted(() => {
+  handleResize();
+  window.addEventListener('resize', handleResize);
   raf = requestAnimationFrame(tick);
 });
 
 onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
   if (raf) cancelAnimationFrame(raf);
 });
 </script>
@@ -218,7 +226,8 @@ onUnmounted(() => {
           <!-- Profile image with rim light -->
           <div class="planet">
             <div class="rim-light" :style="rimStyle"></div>
-            <img src="~/assets/css/img/Alan_Reibel_Profile.png" alt="Alan Reibel Perez - Fullstack Web Developer Profile" />
+            <img src="~/assets/css/img/Alan_Reibel_Profile.png"
+              alt="Alan Reibel Perez - Fullstack Web Developer Profile" />
           </div>
 
           <!-- 3D Orbit items (siblings of planet for z-sorting) -->
@@ -234,7 +243,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.section {
+#about {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -266,231 +275,246 @@ onUnmounted(() => {
     gap: 4rem;
     align-items: center;
 
-    .content {
-      opacity: 0;
-      transform: translateY(30px);
+
+  }
+
+  .content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    span {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--accent-secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 12vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: var(--gradient-text);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      word-break: break-word;
+    }
+
+    h2 {
+      font-size: clamp(1.2rem, 5vw, 2rem);
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 550px;
+      margin-bottom: 2.5rem;
+    }
+
+    .location {
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+
+
+    }
+
+    .button {
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
       transition:
-        opacity 0.8s ease-out,
-        transform 0.8s ease-out;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+      font-size: 1rem;
 
-      &.is-visible {
-        opacity: 1;
-        transform: translateY(0);
+      &:active {
+        transform: scale(0.98);
       }
 
-      .greeting {
-        display: block;
-        font-size: 1.5rem;
-        color: var(--accent-secondary);
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-      }
+      &.primary {
+        background: var(--gradient-main);
+        color: #000;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 220, 130, 0.3);
 
-      .name {
-        font-size: 4.5rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        background: var(--gradient-text);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        line-height: 1.1;
-      }
-
-      .role {
-        font-size: 2rem;
-        color: var(--text-secondary);
-        font-weight: 400;
-        margin-bottom: 1.5rem;
-      }
-
-      .description {
-        font-size: 1.1rem;
-        color: var(--text-secondary);
-        line-height: 1.8;
-        max-width: 550px;
-        margin-bottom: 2.5rem;
-      }
-
-      .contact {
-        .location {
-          margin-bottom: 1.5rem;
-          color: var(--text-primary);
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 220, 130, 0.4);
         }
+      }
 
-        .actions {
-          display: flex;
-          gap: 1rem;
+      &.outline {
+        background: transparent;
+        border: 1px solid var(--accent-primary);
+        color: var(--accent-primary);
+        flex: 1 1 auto;
+        min-width: 140px;
 
-          .button {
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition:
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
-            font-size: 1rem;
-
-            &:active {
-              transform: scale(0.98);
-            }
-
-            &.primary {
-              background: var(--gradient-main);
-              color: #000;
-              border: none;
-              box-shadow: 0 4px 15px rgba(0, 220, 130, 0.3);
-
-              &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0, 220, 130, 0.4);
-              }
-            }
-
-            &.outline {
-              background: transparent;
-              border: 1px solid var(--accent-primary);
-              color: var(--accent-primary);
-
-              &:hover {
-                background: rgba(0, 220, 130, 0.1);
-              }
-            }
-          }
+        &:hover {
+          background: rgba(0, 220, 130, 0.1);
         }
       }
     }
+  }
 
-    .visual {
+  .visual {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+    transition-delay: 0.2s;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .planet-container {
+      position: relative;
+      width: 460px;
+      height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 800px;
+      transform-style: preserve-3d;
+      margin: 0 auto;
+    }
+
+    /* --- Profile image with rim light & bottom fade --- */
+    .planet {
+      position: relative;
+      width: 200px;
+      height: 290px;
+      overflow: hidden;
+      transform: translateX(10%);
+      mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+
+
+    }
+
+    .rim-light {
+      position: absolute;
+      inset: -12px;
+      border-radius: 4px;
+      background: conic-gradient(from 0deg,
+          transparent 0%,
+          rgba(54, 228, 218, 0.35) 12%,
+          transparent 25%,
+          rgba(0, 220, 130, 0.25) 40%,
+          transparent 55%,
+          rgba(97, 218, 251, 0.3) 70%,
+          transparent 85%,
+          rgba(167, 85, 247, 0.2) 95%,
+          transparent 100%);
+      filter: blur(10px);
+      z-index: 0;
+      will-change: transform;
+    }
+
+    /* --- Orbit items --- */
+    .orbit-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    /* Depth-of-field: bokeh blur & dimming on children */
+    .orbit-item svg,
+    .orbit-item span {
+      filter: blur(var(--d-blur, 0px));
+      opacity: var(--d-dim, 1);
+      transform: scale(var(--d-scale, 1));
+      transition: filter 0.15s ease, opacity 0.15s ease;
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    span {
+      font-size: .75rem;
+    }
+
+    /* --- Atmospheric floating particles --- */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(54, 228, 218, 0.8), rgba(0, 220, 130, 0.3));
+      animation: float-up linear infinite;
+      will-change: transform, opacity;
+    }
+
+
+  }
+
+
+  @keyframes float-up {
+    0% {
+      transform: translateY(0) scale(1);
       opacity: 0;
-      transform: translateY(30px);
-      transition:
-        opacity 0.8s ease-out,
-        transform 0.8s ease-out;
-      transition-delay: 0.2s;
+    }
 
-      &.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    15% {
+      opacity: var(--particle-opacity, 0.3);
+    }
 
-      .planet-container {
-        position: relative;
-        width: 460px;
-        height: 460px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        perspective: 800px;
-        transform-style: preserve-3d;
-        margin: 0 auto;
-      }
+    85% {
+      opacity: var(--particle-opacity, 0.3);
+    }
 
-      /* --- Profile image with rim light & bottom fade --- */
-      .planet {
-        position: relative;
-        width: 200px;
-        height: 290px;
-        overflow: hidden;
-        transform: translateZ(0px);
-        mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-          position: relative;
-          z-index: 1;
-        }
-
-        .rim-light {
-          position: absolute;
-          inset: -12px;
-          border-radius: 4px;
-          background: conic-gradient(from 0deg,
-              transparent 0%,
-              rgba(54, 228, 218, 0.35) 12%,
-              transparent 25%,
-              rgba(0, 220, 130, 0.25) 40%,
-              transparent 55%,
-              rgba(97, 218, 251, 0.3) 70%,
-              transparent 85%,
-              rgba(167, 85, 247, 0.2) 95%,
-              transparent 100%);
-          filter: blur(10px);
-          z-index: 0;
-          will-change: transform;
-        }
-      }
-
-      /* --- Orbit items --- */
-      .orbit-item {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        transform-style: preserve-3d;
-        will-change: transform;
-      }
-
-      /* Depth-of-field: bokeh blur & dimming on children */
-      .orbit-item svg,
-      .orbit-item span {
-        filter: blur(var(--d-blur, 0px));
-        opacity: var(--d-dim, 1);
-        transform: scale(var(--d-scale, 1));
-        transition: filter 0.15s ease, opacity 0.15s ease;
-      }
-
-      svg {
-        width: 2rem;
-        height: 2rem;
-      }
-
-      span {
-        font-size: .75rem;
-      }
-
-      /* --- Atmospheric floating particles --- */
-      .particles {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .particle {
-        position: absolute;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(54, 228, 218, 0.8), rgba(0, 220, 130, 0.3));
-        animation: float-up linear infinite;
-        will-change: transform, opacity;
-      }
-
-      @keyframes float-up {
-        0% {
-          transform: translateY(0) scale(1);
-          opacity: 0;
-        }
-
-        15% {
-          opacity: var(--particle-opacity, 0.3);
-        }
-
-        85% {
-          opacity: var(--particle-opacity, 0.3);
-        }
-
-        100% {
-          transform: translateY(-80px) scale(0.3);
-          opacity: 0;
-        }
-      }
+    100% {
+      transform: translateY(-80px) scale(0.3);
+      opacity: 0;
     }
   }
 
@@ -500,29 +524,46 @@ onUnmounted(() => {
       text-align: center;
       padding-top: 2rem;
 
-      .content {
-        .name {
-          font-size: 3.5rem;
-        }
+    }
 
-        .description {
-          margin: 0 auto 2.5rem;
-        }
+    .content {
+      /* Removed empty .name ruleset */
 
-        .contact {
-          .location {
-            justify-content: center;
-          }
-
-          .actions {
-            justify-content: center;
-          }
-        }
+      .description {
+        margin: 0 auto 2.5rem;
       }
 
-      .visual {
-        display: none;
+      .contact {
+        .location {
+          justify-content: center;
+        }
+
+        .actions {
+          justify-content: center;
+        }
       }
+    }
+
+    .visual {
+      order: -1;
+      margin-bottom: 2rem;
+
+
+    }
+
+    .planet-container {
+      width: 300px;
+      height: 300px;
+    }
+
+    .planet {
+      width: 140px;
+      height: 200px;
+    }
+
+    .orbit-item svg {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 }

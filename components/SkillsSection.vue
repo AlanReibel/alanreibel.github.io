@@ -8,12 +8,7 @@ const { technologies } = useCvData();
       <h2 class="title" v-animate-on-scroll>Technical Skills</h2>
 
       <div class="grid">
-        <div
-          v-for="(skills, category) in technologies"
-          :key="category"
-          class="card"
-          v-animate-on-scroll
-        >
+        <div v-for="(skills, category) in technologies" :key="category" class="card" v-animate-on-scroll>
           <h3 class="name">{{ category }}</h3>
           <div class="tags">
             <span v-for="skill in skills" :key="skill" class="tag">{{
@@ -27,7 +22,7 @@ const { technologies } = useCvData();
 </template>
 
 <style scoped>
-.root {
+#skills {
   padding: var(--spacing-section) 0;
   container-type: inline-size;
 
@@ -37,10 +32,11 @@ const { technologies } = useCvData();
     padding: 0 1.5rem;
 
     .title {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
       text-align: center;
       margin-bottom: 3rem;
       background: var(--gradient-text);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
@@ -56,8 +52,8 @@ const { technologies } = useCvData();
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
 
       .card {
         background: var(--glass-bg);

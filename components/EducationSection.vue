@@ -3,7 +3,7 @@ const { education, languages, softSkills } = useCvData();
 </script>
 
 <template>
-  <section class="root">
+  <section id="education" class="root">
     <div class="wrapper">
       <div class="grid">
         <!-- Education Column -->
@@ -48,7 +48,7 @@ const { education, languages, softSkills } = useCvData();
 </template>
 
 <style scoped>
-.root {
+#education {
   padding: var(--spacing-section) 0;
   container-type: inline-size;
 
@@ -75,9 +75,10 @@ const { education, languages, softSkills } = useCvData();
         }
 
         .title {
-          font-size: 2rem;
+          font-size: clamp(1.5rem, 6vw, 2rem);
           margin-bottom: 2rem;
           background: var(--gradient-text);
+          background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
