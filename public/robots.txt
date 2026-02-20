@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alanreibel.github.io/profile/sitemap.xml
+Sitemap: https://alanreibel.github.io/sitemap.xml
