@@ -6,6 +6,10 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
+  modules: ["nuxt-gtag"],
+  gtag: {
+    id: "G-Z6FL0XWNTY",
+  },
   app: {
     baseURL: "/",
     head: {
