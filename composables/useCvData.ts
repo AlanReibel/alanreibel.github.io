@@ -243,6 +243,69 @@ export const useCvData = () => {
         },
     ];
 
+    const services = [
+        {
+            title: "Desarrollo Web",
+            description: "Sitios web modernos, responsivos y optimizados. Desde landing pages hasta plataformas complejas con tecnologías actuales.",
+            icon: "🌐"
+        },
+        {
+            title: "Desarrollo de Aplicaciones",
+            description: "Aplicaciones web y móviles escalables. Full Stack con arquitecturas limpias y código mantenible.",
+            icon: "📱"
+        },
+        {
+            title: "Integraciones CRM/ERP",
+            description: "Conecta tus sistemas: Salesforce, HubSpot, SAP, NetSuite. Automatiza flujos de datos entre plataformas.",
+            icon: "🔗"
+        },
+        {
+            title: "Automatización con IA",
+            description: "Implementa agentes IA, workflows inteligentes y herramientas que automatizan procesos complejos.",
+            icon: "🤖"
+        },
+        {
+            title: "Mantenimiento y Soporte",
+            description: "Soporte técnico continuo, actualizaciones, parches de seguridad y monitoreo proactivo de sistemas.",
+            icon: "🔧"
+        },
+        {
+            title: "Asesoramiento Técnico",
+            description: "Consultoría en arquitectura de software, mejora de procesos y selección de tecnologías.",
+            icon: "💡"
+        },
+        {
+            title: "Mentoría y Capacitación",
+            description: "Forma tu equipo en mejores prácticas, nuevas tecnologías y estándares de desarrollo profesional.",
+            icon: "👨‍🏫"
+        },
+        {
+            title: "Automatización de Procesos",
+            description: "Scripts, bots y workflows que reducen tareas manuales. Integración con APIs y herramientas externas.",
+            icon: "⚙️"
+        },
+        {
+            title: "Auditoría de Código",
+            description: "Análisis profundo de tu código, desempeño y seguridad. Recomendaciones de mejora y refactoring.",
+            icon: "🔍"
+        },
+        {
+            title: "Optimización de Rendimiento",
+            description: "Mejora de Core Web Vitals, SEO técnico, velocidad de carga y experiencia de usuario.",
+            icon: "⚡"
+        },
+        {
+            title: "Migrations y Refactoring",
+            description: "Migración entre tecnologías, modernización de código legacy y actualización de arquitecturas.",
+            icon: "🔄"
+        },
+        {
+            title: "eCommerce Solutions",
+            description: "Plataformas de venta en línea con carrito, pagos, inventario y análisis de ventas.",
+            icon: "🛒"
+        }
+    ];
+
     return {
         personalInfo,
         experience,
@@ -250,6 +313,7 @@ export const useCvData = () => {
         languages,
         education,
         softSkills,
-        techIcons
+        techIcons,
+        services
     };
 };

@@ -31,6 +31,7 @@ const closeMenu = () => {
           <li><a href="#about" @click="closeMenu">About</a></li>
           <li><a href="#experience" @click="closeMenu">Experience</a></li>
           <li><a href="#skills" @click="closeMenu">Skills</a></li>
+          <li><a href="#services" @click="closeMenu">Services</a></li>
           <li><a href="#contact" @click="closeMenu">Contact</a></li>
         </ul>
       </nav>
