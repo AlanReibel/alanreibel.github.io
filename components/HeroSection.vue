@@ -103,15 +103,15 @@ onUnmounted(() => {
   <section id="about" class="section">
     <div class="wrapper">
       <div class="content" v-animate-on-scroll>
-        <span class="greeting">Hello, I'm</span>
+        <span class="greeting">{{ $t('hero.greeting') }}</span>
         <h1 class="name">{{ personalInfo.name }}</h1>
-        <h2 class="role">{{ personalInfo.title }}</h2>
-        <p class="description">{{ personalInfo.summary }}</p>
+        <h2 class="role">{{ $t(personalInfo.title) }}</h2>
+        <p class="description">{{ $t(personalInfo.summary) }}</p>
 
         <div class="contact">
-          <p class="location"><span>📍</span> {{ personalInfo.location }}</p>
+          <p class="location"><span>📍</span> {{ $t(personalInfo.location) }}</p>
           <div class="actions">
-            <a :href="'mailto:' + personalInfo.email" class="button primary">Contact Me</a>
+            <a :href="'mailto:' + personalInfo.email" class="button primary">{{ $t('hero.contact') }}</a>
             <a :href="personalInfo.github" target="_blank" class="button outline" rel="noopener">GitHub</a>
             <a :href="personalInfo.linkedin" target="_blank" class="button outline" rel="noopener">LinkedIn</a>
           </div>

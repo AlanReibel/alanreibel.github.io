@@ -5,7 +5,7 @@ const { experience } = useCvData();
 <template>
   <section id="experience" class="root">
     <div class="wrapper">
-      <h2 class="title" v-animate-on-scroll>Professional Experience</h2>
+      <h2 class="title" v-animate-on-scroll>{{ $t('sections.experience') }}</h2>
 
       <div class="timeline">
         <div v-for="(job, index) in experience" :key="index" class="entry"
@@ -17,7 +17,7 @@ const { experience } = useCvData();
 
           <div class="card">
             <header class="header">
-              <h3 class="role">{{ job.role }}</h3>
+              <h3 class="role">{{ $t(`experienceItems.${job.id}.role`) }}</h3>
               <div class="meta">
                 <span class="company">{{ job.company }}</span>
                 <span class="period">{{ job.period }}</span>
@@ -31,11 +31,13 @@ const { experience } = useCvData();
             </div>
 
             <ul class="list">
-              <li v-for="(detail, i) in job.details" :key="i">{{ detail }}</li>
+              <li v-for="(detail, i) in $tm(`experienceItems.${job.id}.details`)" :key="i">
+                {{ $rt(detail) }}
+              </li>
             </ul>
 
             <div v-if="job.projects || job.project" class="footer">
-              <span class="label">Projects:</span>
+              <span class="label">{{ $t('sections.projects') }}:</span>
               <span class="value" v-if="Array.isArray(job.projects)">{{
                 job.projects.join(" | ")
               }}</span>

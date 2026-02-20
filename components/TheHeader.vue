@@ -1,6 +1,27 @@
 <script setup>
 import { ref } from 'vue';
+const { locale, locales, setLocale } = useI18n();
 const isMenuOpen = ref(false);
+
+const changeLanguage = (code) => {
+  if (locale.value === code) return;
+
+  // Change locale immediately
+  setLocale(code);
+
+  // Trigger text animation by adding class
+  document.body.classList.remove('lang-changing');
+  void document.body.offsetWidth; // Force reflow
+  document.body.classList.add('lang-changing');
+
+  // Remove class after animation finishes (0.5s match CSS)
+  setTimeout(() => {
+    document.body.classList.remove('lang-changing');
+  }, 600);
+
+  if (isMenuOpen.value) closeMenu();
+};
+
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
   if (isMenuOpen.value) {
@@ -20,24 +41,34 @@ const closeMenu = () => {
     <div class="wrapper">
       <div class="logo">Alan<span>Reibel</span></div>
 
-      <button class="hamburger" @click="toggleMenu" :class="{ 'is-active': isMenuOpen }" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <div class="lang-switcher">
+          <button v-for="loc in locales" :key="loc.code" @click="changeLanguage(loc.code)"
+            :class="{ active: locale === loc.code }" class="lang-btn">
+            {{ loc.code.toUpperCase() }}
+          </button>
+        </div>
+
+        <button class="hamburger" @click="toggleMenu" :class="{ 'is-active': isMenuOpen }" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
 
       <nav class="nav" :class="{ 'is-open': isMenuOpen }">
         <ul>
-          <li><a href="#about" @click="closeMenu">About</a></li>
-          <li><a href="#experience" @click="closeMenu">Experience</a></li>
-          <li><a href="#skills" @click="closeMenu">Skills</a></li>
-          <li><a href="#services" @click="closeMenu">Services</a></li>
-          <li><a href="#contact" @click="closeMenu">Contact</a></li>
+          <li><a href="#about" @click="closeMenu">{{ $t('nav.about') }}</a></li>
+          <li><a href="#experience" @click="closeMenu">{{ $t('nav.experience') }}</a></li>
+          <li><a href="#skills" @click="closeMenu">{{ $t('nav.skills') }}</a></li>
+          <li><a href="#services" @click="closeMenu">{{ $t('nav.services') }}</a></li>
+          <li><a href="#contact" @click="closeMenu">{{ $t('nav.contact') }}</a></li>
         </ul>
       </nav>
     </div>
   </header>
 </template>
+
 
 <style scoped>
 .header {
@@ -68,6 +99,43 @@ const closeMenu = () => {
 
       span {
         color: var(--accent-primary);
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      z-index: var(--z-overlay);
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem;
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--text-primary);
+      }
+
+      &.active {
+        background: var(--accent-primary);
+        color: white;
       }
     }
 

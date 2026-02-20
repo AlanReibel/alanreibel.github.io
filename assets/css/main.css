@@ -8,21 +8,25 @@
   --text-secondary: #94a3b8;
   --accent-primary: #00dc82;
   --accent-secondary: #36e4da;
-  
+
   /* Gradients */
   --gradient-main: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   --gradient-text: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
-  
+
   /* Glassmorphism Variables */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   /* Z-Index Layers (Strictly Controlled) */
-  --z-negative: -1;  /* Background elements */
-  --z-base: 1;       /* Standard content */
-  --z-floating: 10;  /* Floating elements, sticky headers */
-  --z-overlay: 100;  /* Modals, heavy overlays */
+  --z-negative: -1;
+  /* Background elements */
+  --z-base: 1;
+  /* Standard content */
+  --z-floating: 10;
+  /* Floating elements, sticky headers */
+  --z-overlay: 100;
+  /* Modals, heavy overlays */
 
   /* Spacing & Layout */
   --spacing-section: 6rem;
@@ -33,7 +37,9 @@
   --font-family: 'Outfit', sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -50,7 +56,35 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Language Switch Animation */
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.lang-changing h1,
+.lang-changing h2,
+.lang-changing h3,
+.lang-changing p,
+.lang-changing li,
+.lang-changing span:not(.icon):not(.dot),
+.lang-changing a {
+  animation: textFadeIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   line-height: 1.2;
 }
@@ -73,6 +107,7 @@ ul {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

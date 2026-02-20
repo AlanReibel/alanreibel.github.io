@@ -1,0 +1,172 @@
+{
+    "nav": {
+        "about": "About",
+        "experience": "Experience",
+        "skills": "Skills",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Hello, I'm",
+        "title": "Fullstack Web Developer",
+        "description": "Fullstack Developer specialized in Vue3, Nuxt3, and Laravel. 12 years building high-performance, user-centric web applications with measurable business impact.",
+        "contact": "Contact Me",
+        "location": "Pineda de Mar, Barcelona, Spain"
+    },
+    "sections": {
+        "experience": "Experience",
+        "skills": "Skills",
+        "education": "Education",
+        "services": "Services",
+        "languages": "Languages",
+        "softSkills": "Soft Skills",
+        "projects": "Projects"
+    },
+    "servicesItems": {
+        "web": {
+            "title": "Web Development",
+            "description": "Modern, responsive and optimized websites. From landing pages to complex platforms with current technologies."
+        },
+        "apps": {
+            "title": "App Development",
+            "description": "Scalable web and mobile applications. Full Stack with clean architectures and maintainable code."
+        },
+        "crm": {
+            "title": "CRM/ERP Integrations",
+            "description": "Connect your systems: Salesforce, HubSpot, SAP, NetSuite. Automate data flows between platforms."
+        },
+        "ai": {
+            "title": "AI Automation",
+            "description": "Implement AI agents, intelligent workflows and tools that automate complex processes."
+        },
+        "support": {
+            "title": "Maintenance & Support",
+            "description": "Continuous technical support, updates, security patches and proactive system monitoring."
+        },
+        "consulting": {
+            "title": "Technical Consulting",
+            "description": "Software architecture consultancy, process improvement and technology selection."
+        },
+        "mentoring": {
+            "title": "Mentorship & Training",
+            "description": "Train your team in best practices, new technologies and professional development standards."
+        },
+        "auto": {
+            "title": "Process Automation",
+            "description": "Scripts, bots and workflows that reduce manual tasks. Integration with APIs and external tools."
+        },
+        "audit": {
+            "title": "Code Audit",
+            "description": "Deep analysis of your code, performance and security. Recommendations for improvement and refactoring."
+        },
+        "performance": {
+            "title": "Performance Optimization",
+            "description": "Improvement of Core Web Vitals, technical SEO, loading speed and user experience."
+        },
+        "refactoring": {
+            "title": "Migrations & Refactoring",
+            "description": "Migration between technologies, modernization of legacy code and updating of architectures."
+        },
+        "ecommerce": {
+            "title": "eCommerce Solutions",
+            "description": "Online sales platforms with cart, payments, inventory and sales analysis."
+        }
+    },
+    "education": {
+        "certificate": "Certificate of Professionalism C2 in Web Development (HTML5, CSS3, JavaScript, PHP, MySQL)",
+        "degree": "Higher Level Training Cycle in Computer and Telecommunication Systems"
+    },
+    "experienceItems": {
+        "hall": {
+            "role": "Tech Lead & Co-Founder",
+            "details": [
+                "Built educational management platform as Tech Lead, defining MVP architecture and technical strategy",
+                "Backend: Laravel REST APIs, Eloquent ORM, JWT auth, RBAC, real-time WebSockets notifications",
+                "Frontend: Nuxt 3 + Vue 3 + TypeScript with SSR, Pinia state management, localStorage persistence",
+                "Created management modules: student imports (XLS), staff, scheduling, course catalog, visual calendar",
+                "Led architecture decisions, code reviews, PR management, and clean code standards enforcement",
+                "Automated workflows with Artisan commands, migrations, seeders."
+            ]
+        },
+        "wild": {
+            "role": "Tech Lead - Fullstack",
+            "details": [
+                "Led the technical direction of 24segons.es, selecting technologies and managing code integration",
+                "Engineered 5+ custom templates and modules for Prestashop using PHP and JavaScript",
+                "Contributed to the development and optimization of an eCommerce platform generating over €5k daily",
+                "Developed high-conversion landing pages with Vue and SASS",
+                "Enhanced 3D animations and performance, reducing load from 24s to 2s"
+            ]
+        },
+        "novacasa": {
+            "role": "Fullstack",
+            "details": [
+                "Launched my first Prestashop module that automated shipping cost calculations, reducing manual input errors by 80% and cutting processing time by 50%.",
+                "Modernized a mobile-friendly TPL template, boosting load speed by 50% and increasing mobile conversions by 18%.",
+                "Revitalized site performance by 300%, optimizing key metrics like First Content Paint (FCP), Largest Content Paint (LCP), and Cumulative Layout Shift (CLS), leading to a 15% SEO boost and 20% growth in organic traffic."
+            ]
+        },
+        "commo": {
+            "role": "Fullstack Developer – SEO – Web Performance",
+            "details": [
+                "Revamped a responsive email template for the CASA SEAT campaign, ensuring 100% compatibility across major email clients, improving open rates by 25%.",
+                "Implemented custom PHP functionalities for Suma Capital, enriching UX and improving navigation efficiency by 30%.",
+                "Conducted UX and performance audits for Victoria Foods, identifying and resolving key bottlenecks that saved site speed by 35% and increased user retention by 20%."
+            ]
+        },
+        "etactica": {
+            "role": "LAMP DevOps - Fullstack - Inbound marketing (Mautic) - Helpdesk",
+            "details": [
+                "Optimized 5+ Linux servers and databases in Google Cloud via SSH, reducing downtime by 90% and cutting maintenance costs by 40%.",
+                "Prepared an event attendance web app using HTML5, CSS3, and JavaScript, facilitating 500+ attendees per event and reducing manual check-in time by 60%.",
+                "Automated 80% of marketing processes by integrating Mautic API Rest, reducing campaign setup time by 50%.",
+                "Redacted technical documentation, streamlining onboarding, reducing training time by 30%, and improving internal workflow efficiency."
+            ]
+        },
+        "fujifilm": {
+            "role": "Fullstack - Marketing - Web Design",
+            "details": [
+                "Built interactive web sites using FreeMarker, JavaScript, increasing user engagement and session duration by 35%.",
+                "Upgraded responsive layouts in HTML5 and CSS3, reducing mobile bounce rates by 20%.",
+                "Proposed landing pages in Photoshop, improving conversion rates by 15% and generating 5,000+ leads monthly.",
+                "Conducted SEO and performance evaluations, optimizing page speed and boosting organic traffic by 20%.",
+                "Analyzed Google Analytics data, providing insights that enhanced marketing strategy and improved ad conversion rates by 12%."
+            ]
+        },
+        "putput": {
+            "role": "Frontend developer",
+            "details": [
+                "Composed of Liferay 6 web sites, ensuring integration, reducing errors and increasing efficiency for internal workflows.",
+                "Integrated Google Maps, Street View, Facebook, and Twitter APIs, enhancing interactive features and engagement.",
+                "Created animated landing pages using SVG and CSS3, increasing user retention by 30% and reducing exit rates by 18%.",
+                "Produced technical reports and project documentation ensuring seamless knowledge transfer."
+            ]
+        },
+        "bcn3d": {
+            "role": "Frontend Web Developer - Project Manager",
+            "details": [
+                "Built a custom eCommerce platform in WordPress with PHP, JavaScript, and MySQL, leading to a 20% sales increase and a 35% improvement in page load times.",
+                "Designed custom page structures with HTML5 and CSS3, ensuring full responsiveness across mobile and tablet devices, reducing mobile drop-off rates by 22%.",
+                "Implemented dynamic animations and effects, refining user engagement, increasing average session duration by 15%."
+            ]
+        }
+    },
+    "softSkillsItems": [
+        "Problem Solving",
+        "System Design Thinking",
+        "Team Collaboration",
+        "Continuous Learning",
+        "Attention to Detail",
+        "Self-Management",
+        "Adaptability",
+        "Ownership",
+        "Critical Thinking",
+        "Rapid Learning",
+        "Code Quality Advocacy"
+    ],
+    "languages": {
+        "en": "English",
+        "ca": "Catalan",
+        "es": "Spanish"
+    }
+}

@@ -1,0 +1,172 @@
+{
+    "nav": {
+        "about": "Sobre mi",
+        "experience": "Experiència",
+        "skills": "Habilitats",
+        "services": "Serveis",
+        "contact": "Contacte"
+    },
+    "hero": {
+        "greeting": "Hola, sóc",
+        "title": "Desenvolupador Web Fullstack",
+        "description": "Desenvolupador Fullstack especialitzat en Vue3, Nuxt3 i Laravel. 12 anys construint aplicacions web d'alt rendiment centrades en l'usuari amb un impacte empresarial mesurable.",
+        "contact": "Contacta'm",
+        "location": "Pineda de Mar, Barcelona, Espanya"
+    },
+    "sections": {
+        "experience": "Experiència Professional",
+        "skills": "Habilitats Tècniques",
+        "education": "Educació",
+        "services": "Serveis",
+        "languages": "Idiomes",
+        "softSkills": "Habilitats Personals",
+        "projects": "Projectes"
+    },
+    "servicesItems": {
+        "web": {
+            "title": "Desenvolupament Web",
+            "description": "Llocs web moderns, responsius i optimitzats. Des de landing pages fins a plataformes complexes amb tecnologies actuals."
+        },
+        "apps": {
+            "title": "Desenvolupament d'Aplicacions",
+            "description": "Aplicacions web i mòbils escalables. Full Stack amb arquitectures netes i codi mantenible."
+        },
+        "crm": {
+            "title": "Integracions CRM/ERP",
+            "description": "Connecta els teus sistemes: Salesforce, HubSpot, SAP, NetSuite. Automatitza fluxos de dades entre plataformes."
+        },
+        "ai": {
+            "title": "Automatització amb IA",
+            "description": "Implementa agents d'IA, fluxos de treball intel·ligents i eines que automatitzen processos complexos."
+        },
+        "support": {
+            "title": "Manteniment i Suport",
+            "description": "Suport tècnic continu, actualitzacions, pegats de seguretat i monitoratge proactiu del sistema."
+        },
+        "consulting": {
+            "title": "Consultoria Tècnica",
+            "description": "Consultoria en arquitectura de programari, millora de processos i selecció de tecnologies."
+        },
+        "mentoring": {
+            "title": "Mentoria i Formació",
+            "description": "Forma el teu equip en bones pràctiques, noves tecnologies i estàndards de desenvolupament professional."
+        },
+        "auto": {
+            "title": "Automatització de Processos",
+            "description": "Scripts, bots i fluxos de treball que redueixen tasques manuals. Integració amb APIs i eines externes."
+        },
+        "audit": {
+            "title": "Auditoria de Codi",
+            "description": "Anàlisi profunda del teu codi, rendiment i seguretat. Recomanacions de millora i refactorització."
+        },
+        "performance": {
+            "title": "Optimització de Rendiment",
+            "description": "Millora de Core Web Vitals, SEO tècnic, velocitat de càrrega i experiència d'usuari."
+        },
+        "refactoring": {
+            "title": "Migracions i Refactorització",
+            "description": "Migració entre tecnologies, modernització de codi llegat i actualització d'arquitectures."
+        },
+        "ecommerce": {
+            "title": "Solucions d'eCommerce",
+            "description": "Plataformes de venda en línia amb carret, pagaments, inventari i anàlisi de vendes."
+        }
+    },
+    "education": {
+        "certificate": "Certificat de Professionalitat C2 en Desenvolupament Web (HTML5, CSS3, JavaScript, PHP, MySQL)",
+        "degree": "Cicle Formatiu de Grau Superior en Sistemes Informàtics i de Telecomunicacions"
+    },
+    "experienceItems": {
+        "hall": {
+            "role": "Tech Lead i Co-fundador",
+            "details": [
+                "Desenvolupament de la plataforma de gestió educativa com a Tech Lead, definint l'arquitectura MVP i l'estratègia tècnica",
+                "Backend: APIs REST de Laravel, Eloquent ORM, autenticació JWT, RBAC, notificacions WebSockets en temps real",
+                "Frontend: Nuxt 3 + Vue 3 + TypeScript amb SSR, gestió d'estat Pinia, persistència localStorage",
+                "Creació de mòduls de gestió: importació d'estudiants (XLS), personal, horaris, catàleg de cursos, calendari visual",
+                "Lideratge en decisions d'arquitectura, revisions de codi, gestió de PR i aplicació d'estàndards de codi net",
+                "Automatització de fluxos de treball amb ordres Artisan, migracions i seeders."
+            ]
+        },
+        "wild": {
+            "role": "Tech Lead - Fullstack",
+            "details": [
+                "Lideratge de la direcció tècnica de 24segons.es, seleccionant tecnologies i gestionant la integració del codi",
+                "Enginyeria de més de 5 plantilles i mòduls personalitzats per a Prestashop utilitzant PHP i JavaScript",
+                "Contribució al desenvolupament i optimització d'una plataforma d'eCommerce que genera més de 5.000€ diaris",
+                "Desenvolupament de pàgines d'aterratge d'alta conversió amb Vue i SASS",
+                "Millora d'animacions 3D i rendiment, reduint la càrrega de 24s a 2s"
+            ]
+        },
+        "novacasa": {
+            "role": "Fullstack",
+            "details": [
+                "Vaig llançar el meu primer mòdul de Prestashop que automatitzava el càlcul de costos d'enviament, reduint errors manuals en un 80% i retallant el temps de processament en un 50%.",
+                "Vaig modernitzar una plantilla TPL adaptada a mòbils, augmentant la velocitat de càrrega en un 50% i incrementant les conversions mòbils en un 18%.",
+                "Vaig revitalitzar el rendiment del lloc en un 300%, optimitzant mètriques clau com FCP, LCP i CLS, el que va resultar en una millora del 15% en SEO i un creixement del 20% en el tràfic orgànic."
+            ]
+        },
+        "commo": {
+            "role": "Desenvolupador Fullstack – SEO – Rendiment Web",
+            "details": [
+                "Vaig redissenyar una plantilla de correu electrònic responsive per a la campanya CASA SEAT, assegurant el 100% de compatibilitat, millorant les taxes d'obertura en un 25%.",
+                "Vaig implementar funcionalitats personalitzades en PHP per a Suma Capital, enriquint la UX i millorant l'eficiència de navegació en un 30%.",
+                "Vaig realitzar auditories de UX i rendiment per a Victoria Foods, resolent colls d'ampolla que van estalviar un 35% en la velocitat del lloc i van incrementar la retenció en un 20%."
+            ]
+        },
+        "etactica": {
+            "role": "DevOps LAMP - Fullstack - Marketing Inbound (Mautic) - Suport",
+            "details": [
+                "Vaig optimitzar més de 5 servidors Linux i bases de dades a Google Cloud mitjançant SSH, reduint el temps d'inactivitat en un 90% i els costos de manteniment en un 40%.",
+                "Vaig preparar una web app d'assistència a esdeveniments usant HTML5, CSS3 i JavaScript, facilitant més de 500 assistents per esdeveniment i reduint el temps de registre en un 60%.",
+                "Vaig automatitzar el 80% dels processos de màrqueting integrant l'API Rest de Mautic, reduint el temps de configuració de campanyes en un 50%.",
+                "Vaig redactar documentació tècnica, agilitzant la incorporació de personal, reduint el temps de formació en un 30% i millorant l'eficiència del flux de treball intern."
+            ]
+        },
+        "fujifilm": {
+            "role": "Fullstack - Màrqueting - Disseny Web",
+            "details": [
+                "Vaig construir llocs web interactius usant FreeMarker i JavaScript, augmentant la interacció de l'usuari i la durada de la sessió en un 35%.",
+                "Vaig actualitzar dissenys responsive en HTML5 i CSS3, reduint les taxes de rebot en mòbils en un 20%.",
+                "Vaig proposar pàgines d'aterratge en Photoshop, millorant les taxes de conversió en un 15% i generant més de 5.000 leads mensuals.",
+                "Vaig realitzar avaluacions de SEO i rendiment, optimitzant la velocitat de la pàgina i augmentant el tràfic orgànic en un 20%.",
+                "Vaig analitzar dades de Google Analytics, proporcionant informació que va millorar l'estratègia de màrqueting i va incrementar la conversió d'anuncis en un 12%."
+            ]
+        },
+        "putput": {
+            "role": "Desenvolupador Frontend",
+            "details": [
+                "Vaig desenvolupar llocs web en Liferay 6, assegurant la integració, reduint errors i incrementant l'eficiència en els fluxos de treball interns.",
+                "Vaig integrar APIs de Google Maps, Street View, Facebook i Twitter, millorant les característiques interactives i el compromís.",
+                "Vaig crear pàgines d'aterratge animades usant SVG i CSS3, augmentant la retenció d'usuaris en un 30% i reduint les taxes de sortida en un 18%.",
+                "Vaig produir informes tècnics i documentació de projectes assegurant una transferència de coneixements fluida."
+            ]
+        },
+        "bcn3d": {
+            "role": "Desenvolupador Web Frontend - Project Manager",
+            "details": [
+                "Vaig construir una plataforma d'eCommerce personalitzada en WordPress amb PHP, JavaScript i MySQL, liderant un augment del 20% en vendes i una millora del 35% en temps de càrrega.",
+                "Vaig dissenyar estructures de pàgina personalitzades amb HTML5 i CSS3, assegurant total responsivitat, reduint l'abandonament en mòbils en un 22%.",
+                "Vaig implementar animacions i efectes dinàmics, refinant l'interacció de l'usuari i augmentant la durada mitjana de la sessió en un 15%."
+            ]
+        }
+    },
+    "softSkillsItems": [
+        "Resolució de problemes",
+        "Pensament de disseny de sistemes",
+        "Col·laboració en equip",
+        "Aprenentatge continu",
+        "Atenció al detall",
+        "Autogestió",
+        "Adaptabilitat",
+        "Sentit de propietat",
+        "Pensament crític",
+        "Aprenentatge ràpid",
+        "Defensa de la qualitat del codi"
+    ],
+    "languages": {
+        "en": "Anglès",
+        "ca": "Català",
+        "es": "Espanyol"
+    }
+}

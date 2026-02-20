@@ -1,5 +1,5 @@
 <script setup>
-const { education, languages, softSkills } = useCvData();
+const { education, languages, softSkillsKeys } = useCvData();
 </script>
 
 <template>
@@ -8,13 +8,13 @@ const { education, languages, softSkills } = useCvData();
       <div class="grid">
         <!-- Education Column -->
         <div class="column education" v-animate-on-scroll>
-          <h2 class="title">Education</h2>
+          <h2 class="title">{{ $t('sections.education') }}</h2>
           <div class="list">
             <div v-for="(edu, index) in education" :key="index" class="card">
               <div class="icon-wrap">
                 <span class="icon">🎓</span>
               </div>
-              <p class="desc">{{ edu }}</p>
+              <p class="desc">{{ $t(edu) }}</p>
             </div>
           </div>
         </div>
@@ -22,11 +22,11 @@ const { education, languages, softSkills } = useCvData();
         <!-- Languages & Soft Skills Column -->
         <div class="column misc" v-animate-on-scroll>
           <div class="languages">
-            <h2 class="title">Languages</h2>
+            <h2 class="title">{{ $t('sections.languages') }}</h2>
             <div class="card">
               <ul class="list">
                 <li v-for="lang in languages" :key="lang.name">
-                  <span class="name">{{ lang.name }}</span>
+                  <span class="name">{{ $t(lang.name) }}</span>
                   <span class="level">{{ lang.level }}</span>
                 </li>
               </ul>
@@ -34,10 +34,10 @@ const { education, languages, softSkills } = useCvData();
           </div>
 
           <div class="soft-skills">
-            <h2 class="title">Soft Skills</h2>
+            <h2 class="title">{{ $t('sections.softSkills') }}</h2>
             <div class="cloud">
-              <span v-for="skill in softSkills" :key="skill" class="pill">{{
-                skill
+              <span v-for="(skill, index) in $tm('softSkillsItems')" :key="index" class="pill">{{
+                $rt(skill)
               }}</span>
             </div>
           </div>

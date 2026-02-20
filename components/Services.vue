@@ -1,12 +1,12 @@
 <template>
     <section id="services" class="root">
         <div class="wrapper">
-            <h2 class="title" v-animate-on-scroll>Services</h2>
+            <h2 class="title" v-animate-on-scroll>{{ $t('sections.services') }}</h2>
 
             <div class="grid">
                 <div v-for="(service, index) in services" :key="index" class="card" v-animate-on-scroll>
-                    <h3 class="name">{{ service.title }}</h3>
-                    <p class="description">{{ service.description }}</p>
+                    <h3 class="name">{{ $t(`servicesItems.${service.id}.title`) }}</h3>
+                    <p class="description">{{ $t(`servicesItems.${service.id}.description`) }}</p>
                 </div>
             </div>
         </div>

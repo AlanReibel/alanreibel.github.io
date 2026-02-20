@@ -5,7 +5,7 @@ const { technologies } = useCvData();
 <template>
   <section id="skills" class="root">
     <div class="wrapper">
-      <h2 class="title" v-animate-on-scroll>Technical Skills</h2>
+      <h2 class="title" v-animate-on-scroll>{{ $t('sections.skills') }}</h2>
 
       <div class="grid">
         <div v-for="(skills, category) in technologies" :key="category" class="card" v-animate-on-scroll>
